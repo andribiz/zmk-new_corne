@@ -62,7 +62,7 @@
         };
         lck: lck {
             compatible = "zmk,behavior-macro";
-            #binding-cells = <1>;
+            #binding-cells = <0>;
             bindings
                 = <&macro_press &kp LCTL &kp LGUI>
                 , <&macro_tap &kp Q>
