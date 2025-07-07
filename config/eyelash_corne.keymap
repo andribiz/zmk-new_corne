@@ -50,29 +50,48 @@
         tap-ms = <100>;
     };
 
+   macros {
+        scrcp: scrcp {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LSHFT &kp LCTL &kp LGUI>
+                , <&macro_tap &kp 4>
+                , <&macro_release &kp LSHFT &kp LCTL &kp LGUI>
+                ;
+        };
+        lck: lck {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTL &kp LGUI>
+                , <&macro_tap &kp Q>
+                , <&macro_release  &kp LCTL &kp LGUI>
+                ;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
             display-name = "QWERTY";
             bindings = <
-&kp TAB    &mt LALT A  &kp S  &kp D     &kp F  &kp G                     &kp LEFT  &kp LCLK  &kp RIGHT  &kp H        &kp J  &kp K      &mt RALT L    &kp SEMI  &kp SQT
-&kp GRAVE    &kp Q       &kp W  &kp E     &kp R  &kp T                               &kp UP               &kp Y        &kp U  &kp I      &kp O         &kp P     &kp BSPC
-&td0       &kp Z       &kp X  &kp C     &kp V  &kp B        &kp C_PP              &kp DOWN              &kp N        &kp M  &kp COMMA  &kp DOT       &kp FSLH  &mo 3
+&kp GRAVE  &kp Q       &kp W  &kp E     &kp R  &kp T                            &kp UP               &kp Y    &kp U  &kp I      &kp O         &kp P     &kp BSPC
+&kp TAB    &mt LALT A  &kp S  &kp D     &kp F  &kp G                  &kp LEFT  &kp LCLK  &kp RIGHT  &kp H    &kp J  &kp K      &mt RALT L    &kp SEMI  &kp SQT
+&td0       &kp Z       &kp X  &kp C     &kp V  &kp B     &kp C_PP               &kp DOWN             &kp N    &kp M  &kp COMMA  &kp DOT       &kp FSLH  &mo 3
                        &kp LGUI  &lt 1 ESC  &mt LSHIFT ENTER                                     &mt LC(LS(LA(LGUI))) SPACE  &mo 2  &kp LCTRL
             >;
 
              sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
-
-           
         };
 
         lower_layer {
             display-name = "NUMBER";
             bindings = <
-&trans  &kp N1           &kp N2          &kp N3        &kp N4        &kp N5                                         &mmv MOVE_UP                     &kp N6           &kp N7           &kp N8           &kp N9           &kp N0    &kp BSPC
-&trans    &kp EQUAL    &kp UNDERSCORE &kp MINUS    &kp PLUS   &kp AMPS            &mmv MOVE_LEFT  &mkp LCLK  &mmv MOVE_RIGHT  &kp LBKT  &kp RBKT   &kp LPAR  &kp RPAR  &kp STAR  &trans
-&trans    &kp AT_SIGN  &kp DOLLAR     &kp PERCENT  &kp EXCL   &kp HASH &kp C_MUTE                  &mmv MOVE_DOWN             &kp PIPE  &kp CARET  &kp LBRC  &kp RBRC  &kp NUBS  &trans
+&trans    &kp N1       &kp N2         &kp N3       &kp N4     &kp N5                              &mmv MOVE_UP                  &kp N6    &kp N7     &kp N8    &kp N9    &kp N0    &kp DEL
+&trans    &kp EQUAL    &kp UNDERSCORE &kp MINUS    &kp PLUS   &kp AMPS            &mmv MOVE_LEFT  &mkp LCLK     &mmv MOVE_RIGHT &kp LBKT  &kp RBKT   &kp LPAR  &kp RPAR  &kp STAR  &trans
+&trans    &kp AT_SIGN  &kp DOLLAR     &kp PERCENT  &kp EXCL   &kp HASH &kp C_MUTE                 &mmv MOVE_DOWN                &kp PIPE  &kp CARET  &kp LBRC  &kp RBRC  &kp NUBS  &trans
                                     &trans       &trans     &trans                                                            &trans  &kp RGUI     &trans
             >;
 
@@ -82,9 +101,9 @@
         raise_layer {
             display-name = "SYMBOL";
             bindings = <
-&trans    &kp F1          &kp F2          &kp F3          &kp F4      &kp F5                                  &mmv MOVE_UP                     &kp F6           &kp F7           &kp F8           &kp F9              &kp F10   &kp F11
-&trans    &trans          &trans          &trans          &kp C_NEXT  &kp PG_UP                     &mmv MOVE_LEFT  &mkp LCLK &mmv MOVE_RIGHT  &kp LEFT         &kp DOWN         &kp UP           &kp RIGHT           &kp HOME  &kp F12
-&trans    &rgb_ug RGB_OFF &rgb_ug RGB_ON  &rgb_ug RGB_EFF &kp C_MUTE  &kp PG_DN  &trans                     &mmv MOVE_DOWN                     &rgb_ug RGB_EFR  &rgb_ug RGB_SPI  &rgb_ug RGB_BRI  &rgb_ug RGB_BRD     &kp END   &trans
+&lck      &kp F1          &kp F2          &kp F3          &kp F4      &kp F5                                  &mmv MOVE_UP                     &kp F6           &kp F7           &kp F8           &kp F9              &kp F10   &kp F11
+&trans    &trans          &scrcp          &trans          &kp C_NEXT  &kp PG_UP                     &mmv MOVE_LEFT  &mkp LCLK &mmv MOVE_RIGHT  &kp LEFT         &kp DOWN         &kp UP           &kp RIGHT           &kp HOME  &kp F12
+&trans    &rgb_ug RGB_OFF &rgb_ug RGB_ON  &rgb_ug RGB_EFF &kp C_MUTE  &kp PG_DN  &trans                     &mmv MOVE_DOWN                     &rgb_ug RGB_EFR  &rgb_ug RGB_SPI  &rgb_ug RGB_BRI  &rgb_ug RGB_BRD     &kp END   &soft_off
                                     &trans     &kp LCTL     &trans                                                                             &trans    &trans     &trans
             >;
 
@@ -94,9 +113,9 @@
         layer_3 {
             display-name = "Fn";
             bindings = <
-&studio_unlock  &none             &none         &none         &none         &none                                   &mmv MOVE_UP                   &none       &none      &none       &none      &none            &none
-&trans          &bt BT_CLR_ALL    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3             &mmv MOVE_LEFT  &mkp LCLK    &mmv MOVE_RIGHT  &kp LEFT    &kp DOWN   &kp UP      &kp RIGHT  &kp HOME         &trans
-&trans          &sys_reset        &bootloader   &out OUT_USB  &out OUT_BLE  &trans  &trans                    &mmv MOVE_DOWN                 &trans      &trans     &bootloader &sys_reset &kp SCROLLLOCK   &trans
+&studio_unlock  &none             &none         &none         &none         &none                                   &mmv MOVE_UP                   &none       &none      &none       &none      &none          &none
+&trans          &bt BT_CLR_ALL    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3             &mmv MOVE_LEFT  &mkp LCLK    &mmv MOVE_RIGHT  &kp LEFT    &kp DOWN   &kp UP      &kp RIGHT  &trans         &trans
+&trans          &sys_reset        &bootloader   &out OUT_USB  &out OUT_BLE  &trans  &trans                    &mmv MOVE_DOWN                       &trans      &trans     &bootloader &sys_reset &kp SCROLLLOCK &trans
                                     &trans       &trans     &trans                                                                                  &trans      &trans     &trans
             >;
 
