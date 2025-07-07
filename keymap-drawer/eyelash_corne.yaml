@@ -140,7 +140,7 @@ layers:
   - RGB BRI
   - RGB BRD
   - END
-  - '&soft_off'
+  - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - LCTL
   - {t: '$$mdi:transfer$$', type: trans}
