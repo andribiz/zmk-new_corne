@@ -96,7 +96,7 @@ layers:
   - {type: held}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - '&RGUI'
+  - RGUI
   - {t: '$$mdi:transfer$$', type: trans}
   NAV:
   - '&lck'
@@ -142,7 +142,7 @@ layers:
   - END
   - '&soft_of'
   - {t: '$$mdi:transfer$$', type: trans}
-  - '&LCTL'
+  - LCTL
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
