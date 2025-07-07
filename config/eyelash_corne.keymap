@@ -50,27 +50,6 @@
         tap-ms = <100>;
     };
 
-   macros {
-        scrcp: scrcp {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_press &kp LSHFT &kp LCTL &kp LGUI>
-                , <&macro_tap &kp 4>
-                , <&macro_release &kp LSHFT &kp LCTL &kp LGUI>
-                ;
-        };
-        lck: lck {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_press &kp LCTL &kp LGUI>
-                , <&macro_tap &kp Q>
-                , <&macro_release  &kp LCTL &kp LGUI>
-                ;
-        };
-    };
-
     keymap {
         compatible = "zmk,keymap";
 
@@ -100,8 +79,8 @@
         raise_layer {
             display-name = "NAV";
             bindings = <
-&lck      &kp F1          &kp F2          &kp F3          &kp F4      &kp F5                                  &mmv MOVE_UP                     &kp F6           &kp F7           &kp F8           &kp F9           &kp F10   &kp F11
-&trans    &trans          &scrcp          &trans          &kp C_NEXT  &kp PG_UP                     &mmv MOVE_LEFT  &mkp LCLK &mmv MOVE_RIGHT  &kp LEFT         &kp DOWN         &kp UP           &kp RIGHT        &kp HOME  &kp F12
+&trans      &kp F1          &kp F2          &kp F3          &kp F4      &kp F5                                  &mmv MOVE_UP                     &kp F6           &kp F7           &kp F8           &kp F9           &kp F10   &kp F11
+&trans    &trans          &trans          &trans          &kp C_NEXT  &kp PG_UP                     &mmv MOVE_LEFT  &mkp LCLK &mmv MOVE_RIGHT  &kp LEFT         &kp DOWN         &kp UP           &kp RIGHT        &kp HOME  &kp F12
 &trans    &trans          &trans          &trans          &trans      &trans    &trans                   &mmv MOVE_DOWN                        &trans           &trans           &trans           &trans           &kp END   &soft_off
                                     &trans     &kp LCTL     &trans                                                                             &trans    &trans     &trans
             >;
