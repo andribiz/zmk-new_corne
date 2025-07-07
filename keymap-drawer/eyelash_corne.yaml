@@ -128,19 +128,19 @@ layers:
   - HOME
   - F12
   - {t: '$$mdi:transfer$$', type: trans}
-  - '@'
-  - $
-  - '%'
-  - '!'
-  - '#'
+  - RGB OFF
+  - RGB ON
+  - RGB EFF
+  - $$mdi:volume-off$$
+  - PG DW
   - $$mdi:volume-off$$
   - {t: '$$mdi:menu-down$$', s: '$$mdi:mouse$$'}
-  - '|'
-  - ^
-  - '{'
-  - '}'
-  - NUBS
-  - {t: '$$mdi:transfer$$', type: trans}
+  - RGB EFR
+  - RGB SPI
+  - RGB BRI
+  - RGB BRD
+  - END
+  - '&soft_off'
   - {t: '$$mdi:transfer$$', type: trans}
   - LCTL
   - {t: '$$mdi:transfer$$', type: trans}
@@ -180,9 +180,9 @@ layers:
   - {t: '$$mdi:backup-restore$$', type: bootloader}
   - $$mdi:progress-download$$
   - OUT USB
-  - out BLE
+  - OUT BLE
   - {t: BT SEl, h: '4'}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - $$mdi:volume-off$$
   - {t: '$$mdi:menu-down$$', s: '$$mdi:mouse$$'}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
