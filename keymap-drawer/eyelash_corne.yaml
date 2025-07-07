@@ -26,8 +26,8 @@ layers:
   - H
   - J
   - K
-  - {t: L, h: '$$mdi:apple-keyboard-option$$'}
-  - {t: ;, s: ':'}
+  - L
+  - {t: ;, h: '$$mdi:apple-keyboard-option$$', s: ':'}
   - {t: '''', s: '"'}
   - '&td0'
   - Z
