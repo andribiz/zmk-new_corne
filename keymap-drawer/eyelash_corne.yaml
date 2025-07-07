@@ -1,7 +1,7 @@
 layout: {zmk_keyboard: eyelash_corne}
 layers:
   QWERTY:
-  - $$mdi:keyboard-esc$$
+  - {t: '`', s: '~'}
   - Q
   - W
   - E
@@ -15,7 +15,7 @@ layers:
   - P
   - {t: '$$mdi:backspace$$', type: backspace}
   - $$mdi:keyboard-tab$$
-  - {t: '$$mdi:apple-keyboard-option$$', h: A}
+  - {t: A, h: '$$mdi:apple-keyboard-option$$'}
   - S
   - D
   - F
@@ -26,9 +26,9 @@ layers:
   - H
   - J
   - K
-  - {t: '$$mdi:apple-keyboard-option$$', h: L}
+  - {t: L, h: '$$mdi:apple-keyboard-option$$'}
   - {t: ;, s: ':'}
-  - {t: '''', s: '"'}
+  - SQTi
   - '&td0'
   - Z
   - X
@@ -50,7 +50,7 @@ layers:
   - '&td1'
   - $$mdi:apple-keyboard-control$$
   SYMBOL:
-  - {t: '`', s: '~'}
+  - $$mdi:keyboard-esc$$
   - {t: '1', s: '!'}
   - {t: '2', s: '@'}
   - {t: '3', s: '#'}
@@ -76,14 +76,14 @@ layers:
   - {t: ']', s: '}'}
   - (
   - )
-  - )
+  - '*'
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - '@'
-  - '&mkp DOLLAR'
-  - '&mkp PERCENT'
-  - '&mkp EXCL'
-  - '&mkp HASH'
+  - $
+  - '%'
+  - '!'
+  - '#'
   - $$mdi:volume-off$$
   - {t: '$$mdi:menu-down$$', s: '$$mdi:mouse$$'}
   - '|'
@@ -99,7 +99,7 @@ layers:
   - RGUI
   - {t: '$$mdi:transfer$$', type: trans}
   NAV:
-  - {t: '$$mdi:transfer$$', type: trans}
+  - '&lck'
   - F1
   - F2
   - F3
@@ -114,7 +114,7 @@ layers:
   - F11
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - '&scrcp'
   - {t: '$$mdi:transfer$$', type: trans}
   - $$mdi:skip-next$$
   - PG UP
@@ -140,7 +140,7 @@ layers:
   - RGB BRI
   - RGB BRD
   - END
-  - {t: '$$mdi:transfer$$', type: trans}
+  - '&soft_off'
   - {t: '$$mdi:transfer$$', type: trans}
   - LCTL
   - {t: '$$mdi:transfer$$', type: trans}
