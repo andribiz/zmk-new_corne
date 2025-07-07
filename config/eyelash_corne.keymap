@@ -72,7 +72,7 @@
             #binding-cells = <1>;
             bindings
                 = <&macro_press &kp LCTL &kp LGUI>
-                , <&macro_tap &kp q>
+                , <&macro_tap &kp Q>
                 , <&macro_release  &kp LCTL &kp LGUI>
                 ;
         };
