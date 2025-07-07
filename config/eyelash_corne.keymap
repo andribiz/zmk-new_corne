@@ -109,7 +109,7 @@
             bindings = <
 &lck      &kp F1          &kp F2          &kp F3          &kp F4      &kp F5                                  &mmv MOVE_UP                     &kp F6           &kp F7           &kp F8           &kp F9           &kp F10   &kp F11
 &trans    &trans          &scrcp          &trans          &kp C_NEXT  &kp PG_UP                     &mmv MOVE_LEFT  &mkp LCLK &mmv MOVE_RIGHT  &kp LEFT         &kp DOWN         &kp UP           &kp RIGHT        &kp HOME  &kp F12
-&trans    &bt AT_SIGN  &kp DOLLAR     &kp PERCENT  &kp EXCL   &kp HASH &kp C_MUTE                  &mmv MOVE_DOWN             &kp PIPE  &kp CARET  &kp LBRC  &kp RBRC  &kp NUBS  &trans
+&trans    &rgb_ug RGB_OFF &rgb_ug RGB_ON  &rgb_ug RGB_EFF &kp C_MUTE  &kp PG_DW  &kp C_MUTE                   &mmv MOVE_DOWN                     &rgb_ug RGB_EFR  &rgb_ug RGB_SPI  &rgb_ug RGB_BRI  &rgb_ug RGB_BRD  &kp END   &soft_off
                                     &trans     &kp LCTL     &trans                                                                             &trans    &trans     &trans
             >;
 
@@ -121,7 +121,7 @@
             bindings = <
 &studio_unlock  &none             &none         &none         &none         &none                                   &mmv MOVE_UP                   &none       &none      &none       &none      &none            &none
 &trans          &bt BT_CLR_ALL    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3             &mmv MOVE_LEFT  &mkp LCLK    &mmv MOVE_RIGHT  &kp LEFT    &kp DOWN   &kp UP      &kp RIGHT  &kp HOME         &kp PG_UP
-&trans          &sys_reset        &bootloader   &out OUT_USB  &out out_BLE  &bt BT_SEl 4  &trans                    &mmv MOVE_DOWN                 &trans      &trans     &bootloader &sys_reset &kp SCROLLLOCK   &kp PAUSE_BREAK
+&trans          &sys_reset        &bootloader   &out OUT_USB  &out OUT_BLE  &bt BT_SEl 4  &kp C_MUTE                    &mmv MOVE_DOWN             &trans      &trans     &bootloader &sys_reset &kp SCROLLLOCK   &kp PAUSE_BREAK
                                     &trans       &trans     &trans                                                                                  &trans      &trans     &trans
             >;
 
