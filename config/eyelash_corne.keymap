@@ -96,8 +96,8 @@
             display-name = "SYMBOL";
             bindings = <
 &kp GRAVE &kp N1       &kp N2         &kp N3       &kp N4     &kp N5                              &mmv MOVE_UP                 &kp N6    &kp N7     &kp N8    &kp N9    &kp N0    &kp DEL
-&trans    &kp EQUAL    &kp UNDERSCORE &kp MINUS    &kp PLUS   &kp AMPS            &mmv MOVE_LEFT  &mkp LCLK  &mmv MOVE_RIGHT      &kp LBKT  &kp RBKT   &kp LPAR  &kp RPAR  &kp RPAR  &trans
-&trans    &bt AT_SIGN  &mkp DOLLAR    &mkp PERCENT &mkp EXCL  &mkp HASH                           &mmv MOVE_DOWN                  &kp PIPE  &kp CARET  &kp LBRC  &kp RBRC  &kp NUBS  &trans
+&trans    &kp EQUAL    &kp UNDERSCORE &kp MINUS    &kp PLUS   &kp AMPS            &mmv MOVE_LEFT  &mkp LCLK  &mmv MOVE_RIGHT   &kp LBKT  &kp RBKT   &kp LPAR  &kp RPAR  &kp RPAR  &trans
+&trans    &bt AT_SIGN  &mkp DOLLAR    &mkp PERCENT &mkp EXCL  &mkp HASH &kp C_MUTE                  &mmv MOVE_DOWN               &kp PIPE  &kp CARET  &kp LBRC  &kp RBRC  &kp NUBS  &trans
                                     &trans       &trans     &trans                                                            &trans  &RGUI     &trans
             >;
 
@@ -109,7 +109,7 @@
             bindings = <
 &lck      &kp F1          &kp F2          &kp F3          &kp F4      &kp F5                                  &mmv MOVE_UP                     &kp F6           &kp F7           &kp F8           &kp F9              &kp F10   &kp F11
 &trans    &trans          &scrcp          &trans          &kp C_NEXT  &kp PG_UP                     &mmv MOVE_LEFT  &mkp LCLK &mmv MOVE_RIGHT  &kp LEFT         &kp DOWN         &kp UP           &kp RIGHT           &kp HOME  &kp F12
-&trans    &rgb_ug RGB_OFF &rgb_ug RGB_ON  &rgb_ug RGB_EFF &kp C_MUTE  &kp PG_DW                              &mmv MOVE_DOWN                    &rgb_ug RGB_EFR  &rgb_ug RGB_SPI  &rgb_ug RGB_BRI  &rgb_ug RGB_BRD     &kp END   &soft_of
+&trans    &rgb_ug RGB_OFF &rgb_ug RGB_ON  &rgb_ug RGB_EFF &kp C_MUTE  &kp PG_DW  &trans                     &mmv MOVE_DOWN                    &rgb_ug RGB_EFR  &rgb_ug RGB_SPI  &rgb_ug RGB_BRI  &rgb_ug RGB_BRD     &kp END   &soft_of
                                     &trans     &LCTL     &trans                                                                             &trans    &trans     &trans
             >;
 
@@ -119,9 +119,9 @@
         layer_3 {
             display-name = "Fn";
             bindings = <
-&studio_unlock  &none                  &none           &none         &none         &none                                &mmv MOVE_UP                   &none       &none      &none       &none      &none            &none
-&trans          &bt BT_CLR_ALL         &bt BT_SEL 0    &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL            &mmv MOVE_LEFT  &mkp LCLK    &mmv MOVE_RIGHT  &kp LEFT    &kp DOWN   &kp UP      &kp RIGHT  &kp HOME         &kp PG_UP
-&trans          &sys_reset  &trans     &bootloader     &trans        &none         &bt BT_SEL 4                         &mmv MOVE_DOWN                   &trans      &trans     &bootloader &sys_reset &kp SCROLLLOCK   &kp PAUSE_BREAK
+&studio_unlock  &none                  &none           &none         &none         &none                                   &mmv MOVE_UP                   &none       &none      &none       &none      &none            &none
+&trans          &bt BT_CLR_ALL         &bt BT_SEL 0    &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3             &mmv MOVE_LEFT  &mkp LCLK    &mmv MOVE_RIGHT  &kp LEFT    &kp DOWN   &kp UP      &kp RIGHT  &kp HOME         &kp PG_UP
+&trans          &sys_reset             &trans          &bootloader   &trans        &bt BT_SEl 4  &trans                    &mmv MOVE_DOWN                 &trans      &trans     &bootloader &sys_reset &kp SCROLLLOCK   &kp PAUSE_BREAK
                                        &trans       &trans     &trans                                                                                  &trans      &trans     &trans
             >;
 
