@@ -28,7 +28,7 @@ layers:
   - K
   - {t: L, h: '$$mdi:apple-keyboard-option$$'}
   - {t: ;, s: ':'}
-  - SQTi
+  - {t: '''', s: '"'}
   - '&td0'
   - Z
   - X
