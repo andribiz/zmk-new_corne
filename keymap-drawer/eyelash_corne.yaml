@@ -47,7 +47,7 @@ layers:
   - {t: '$$mdi:keyboard-esc$$', h: SYMBOL}
   - {t: '$$mdi:keyboard-return$$', h: '$$mdi:apple-keyboard-shift$$'}
   - {t: '$$mdi:keyboard-space$$', h: Meh+LGUI}
-  - '&td1'
+  - NAV
   - $$mdi:apple-keyboard-control$$
   SYMBOL:
   - $$mdi:keyboard-esc$$
@@ -145,7 +145,7 @@ layers:
   - LCTL
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - {type: held}
   - {t: '$$mdi:transfer$$', type: trans}
   Fn:
   - '&studio_unlock'
