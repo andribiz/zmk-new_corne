@@ -128,19 +128,19 @@ layers:
   - HOME
   - F12
   - {t: '$$mdi:transfer$$', type: trans}
-  - RGB OFF
-  - RGB ON
-  - RGB EFF
+  - '@'
+  - $
+  - '%'
+  - '!'
+  - '#'
   - $$mdi:volume-off$$
-  - PG DW
-  - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:menu-down$$', s: '$$mdi:mouse$$'}
-  - RGB EFR
-  - RGB SPI
-  - RGB BRI
-  - RGB BRD
-  - END
-  - '&soft_off'
+  - '|'
+  - ^
+  - '{'
+  - '}'
+  - NUBS
+  - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - LCTL
   - {t: '$$mdi:transfer$$', type: trans}
