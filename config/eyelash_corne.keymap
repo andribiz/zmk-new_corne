@@ -1,6 +1,14 @@
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 1200  // 600
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 25   // 10
 
+#define HM_TAPPING_TERM 300
+#define HM_TAPPING_TERM_FAST 200
+#define HM_PRIOR_IDLE 150
+
+#define KEYS_L 0  1  2  3  4  5 13 14 15 16 17 18 28 29 30 31 32 33
+#define KEYS_R 7  8  9 10 11 12 22 23 24 25 26 27 36 37 38 39 40 41
+#define KEYS_T 42 43 44 45 46 47 48
+
 #include <input/processors.dtsi>
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 #include <behaviors.dtsi>
@@ -20,8 +28,34 @@
     delay-ms = <0>;                   // 0
 };
 
+/*
+ * Layer Tap Settings
+ */
+&lt {
+    // Increase layer tap time
+    // tapping-term-ms = <300>;
+
+    // Quickly tap-tap-holding the lt button will repeat the tap behavior
+    // For example enter-enter-hold, will output multiple enter while you
+    // keep holding the key.
+    // But holding enter without double tapping, will activate the layer.
+    // quick-tap-ms = <200>;
+
+     flavor = "balanced";
+};
+
+/*
+ * Sticky Key Settings
+ */
+&sk {
+    // Deactivate shift on press of next key instead of on release
+    // to prevent capitalization of multiple characters when rolling
+    // keys (such as `ST`).
+    quick-release;
+};
+
 &mt {
-    tapping-term-ms = <300>;
+     flavor = "balanced";
 };
 
 &mmv {
@@ -45,6 +79,58 @@
             #binding-cells = <0>;
             tapping-term-ms = <500>;
             bindings = <&mo 2>, <&kp LALT>;
+        };
+       // Positional Homerow mods
+        // Homerow mods that prevent accidental activations when rolling keys,
+        // such as when typing `st` or `ne` on colemak-dh layouts or `as` on
+        // qwerty.
+        //
+        // Works by only allowing a mod to activate within tapping-term if
+        // it's on the opposite side of the keyboard or on the same side thumb
+        // keys.
+
+        // Further optimization using urob's timerless homerow mods method:
+        // https://github.com/urob/zmk-config#timeless-homerow-mods
+        hm_l: homerow_mods_left {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            bindings = <&kp>,  <&kp>;
+
+            flavor = "balanced";
+            tapping-term-ms = <HM_TAPPING_TERM>;
+            quick-tap-ms = <175>;                // repeat on tap-into-hold
+            require-prior-idle-ms = <HM_PRIOR_IDLE>;
+
+            hold-trigger-key-positions = <KEYS_R KEYS_T>;
+            hold-trigger-on-release;
+        };
+
+        hm_r: homerow_mods_right {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            bindings = <&kp>, <&kp>;
+
+            flavor = "balanced";
+            tapping-term-ms = <HM_TAPPING_TERM>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <HM_PRIOR_IDLE>;
+
+            hold-trigger-key-positions = <KEYS_L KEYS_T>;
+            hold-trigger-on-release;
+        };
+
+        /*
+         * Shifted Backspace deletes
+         *
+         * Usage: &mm_bspc_del
+         * Tap: Backspace
+         * Shift-Tap: Delete
+         */
+        mm_bspc_del: bspc_del {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp BSPC>, <&kp DEL>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
     };
 
@@ -89,9 +175,9 @@
         default_layer {
             display-name = "QWERTY";
             bindings = <
-&kp GRAVE  &kp Q       &kp W  &kp E     &kp R  &kp T                            &kp UP               &kp Y    &kp U  &kp I      &kp O    &kp P     &kp BSPC
-&kp TAB    &mt LALT A  &kp S  &kp D     &kp F  &kp G                  &kp LEFT  &kp LCLK  &kp RIGHT  &kp H    &kp J  &kp K      &kp L    &mt RALT SEMI  &kp SQT
-&td0       &kp Z       &kp X  &kp C     &kp V  &kp B     &kp C_PP               &kp DOWN             &kp N    &kp M  &kp COMMA  &kp DOT  &kp FSLH  &mo 3
+&kp GRAVE  &kp Q         &kp W          &kp E     &kp R  &kp T                            &kp UP               &kp Y    &kp U  &kp I      &kp O        &kp P            &mm_bspc_del
+&kp TAB    &hm_l LALT A  &hm_l LGUI S   &kp D     &kp F  &kp G                  &kp LEFT  &kp LCLK  &kp RIGHT  &kp H    &kp J  &kp K      &hm_r RGUI L &hm_r RALT SEMI  &kp SQT
+&td0       &kp Z         &kp X          &kp C     &kp V  &kp B     &kp C_PP               &kp DOWN             &kp N    &kp M  &kp COMMA  &kp DOT      &kp FSLH         &mo 3
                        &kp LGUI  &lt 1 ESC  &mt LSHIFT ENTER                                     &mt LC(LS(LA(LGUI))) SPACE  &mo 2  &kp LCTRL
             >;
 
@@ -101,7 +187,7 @@
         lower_layer {
             display-name = "NUMBER";
             bindings = <
-&trans    &kp N1       &kp N2         &kp N3       &kp N4     &kp N5                              &mmv MOVE_UP                  &kp N6    &kp N7     &kp N8    &kp N9    &kp N0    &kp DEL
+&trans    &kp N1       &kp N2         &kp N3       &kp N4     &kp N5                              &mmv MOVE_UP                  &kp N6    &kp N7     &kp N8    &kp N9    &kp N0    &trans
 &trans    &kp EQUAL    &kp UNDERSCORE &kp MINUS    &kp PLUS   &kp AMPS            &mmv MOVE_LEFT  &mkp LCLK     &mmv MOVE_RIGHT &kp LBKT  &kp RBKT   &kp LPAR  &kp RPAR  &kp STAR  &trans
 &trans    &kp AT_SIGN  &kp DOLLAR     &kp PERCENT  &kp EXCL   &kp HASH &kp C_MUTE                 &mmv MOVE_DOWN                &kp PIPE  &kp CARET  &kp LBRC  &kp RBRC  &kp NUBS  &trans
                                     &trans       &trans     &trans                                                            &trans  &kp RGUI     &trans
