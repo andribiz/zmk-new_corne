@@ -29,7 +29,7 @@ layers:
   - {t: L, h: RGUI}
   - {t: ;, h: '$$mdi:apple-keyboard-option$$', s: ':'}
   - {t: '''', s: '"'}
-  - '&td0'
+  - {t: '$$mdi:apple-keyboard-shift$$', h: '$$mdi:gesture-tap-hold$$', s: '$$mdi:alpha-w-box$$'}
   - Z
   - X
   - C
