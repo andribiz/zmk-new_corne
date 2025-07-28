@@ -188,7 +188,7 @@
         lower_layer {
             display-name = "NUMBER";
             bindings = <
-&trans    &kp N1       &kp N2         &kp N3       &kp N4     &kp N5                              &mmv MOVE_UP                  &kp N6    &kp N7     &kp N8    &kp N9    &kp N0    &trans
+&trans    &mt LG(N1) N1       &mt LG(N2) N2         &mt LG(N3) N3       &mt LG(N4) N4     &mt LG(N5) N5                              &mmv MOVE_UP                  &kp N6    &kp N7     &kp N8    &kp N9    &kp N0    &trans
 &trans    &kp EQUAL    &kp UNDERSCORE &kp MINUS    &kp PLUS   &kp AMPS            &mmv MOVE_LEFT  &mkp LCLK     &mmv MOVE_RIGHT &kp LBKT  &kp RBKT   &kp LPAR  &kp RPAR  &kp STAR  &trans
 &trans    &kp AT_SIGN  &kp DOLLAR     &kp PERCENT  &kp EXCL   &kp HASH &kp C_MUTE                 &mmv MOVE_DOWN                &kp PIPE  &kp CARET  &kp LBRC  &kp RBRC  &kp BSLH  &trans
                                     &trans       &trans     &trans                                                            &trans  &kp RGUI     &trans
