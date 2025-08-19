@@ -28,6 +28,12 @@
     delay-ms = <0>;                   // 0
 };
 
+&mt {
+    // Deactivate shift on press of next key instead of on release
+    // to prevent capitalization of multiple characters when rolling
+    // keys (such as `ST`).
+    flavor = "hold-preferred";
+};
 /*
  * Sticky Key Settings
  */
@@ -179,7 +185,7 @@
 &kp GRAVE  &kp Q         &kp W          &kp E     &kp R  &kp T                            &kp UP               &kp Y    &kp U  &kp I      &kp O        &kp P            &mm_bspc_del
 &kp TAB    &hm_l LALT A  &hm_l LGUI S   &kp D     &kp F  &kp G                  &kp LEFT  &kp LCLK  &kp RIGHT  &kp H    &kp J  &kp K      &hm_r RGUI L &hm_r RALT SEMI  &kp SQT
 &mm_shift_caps_word_l       &kp Z         &kp X          &kp C     &kp V  &kp B     &kp C_PP               &kp DOWN             &kp N    &kp M  &kp COMMA  &kp DOT      &kp FSLH         &mo 3
-                       &kp LGUI  &lt 1 ESC  &mt LSHIFT ENTER                                     &mt LC(LS(LA(LGUI))) SPACE  &mo 2  &kp LCTRL
+                       &kp LGUI  &lt 1 ESC  &mt LSHIFT ENTER                                     &mt LC(LA(LGUI)) SPACE  &mo 2  &kp LCTRL
             >;
 
              sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
