@@ -17,7 +17,7 @@ layers:
   - $$mdi:keyboard-tab$$
   - {t: A, h: '$$mdi:apple-keyboard-option$$'}
   - {t: S, h: LGUI}
-  - D
+  - {t: D, h: '$$mdi:apple-keyboard-control$$'}
   - F
   - G
   - $$mdi:arrow-left-bold$$
@@ -25,7 +25,7 @@ layers:
   - $$mdi:arrow-right-bold$$
   - H
   - J
-  - K
+  - {t: K, h: '$$mdi:apple-keyboard-control$$'}
   - {t: L, h: RGUI}
   - {t: ;, h: '$$mdi:apple-keyboard-option$$', s: ':'}
   - {t: '''', s: '"'}
@@ -43,7 +43,7 @@ layers:
   - {t: ., s: '>'}
   - {t: /, s: '?'}
   - Fn
-  - LGUI
+  - '&lt LGUI'
   - {t: '$$mdi:keyboard-esc$$', h: NUMBER}
   - {t: '$$mdi:keyboard-return$$', h: '$$mdi:apple-keyboard-shift$$'}
   - {t: '$$mdi:keyboard-space$$', h: Ctl+Alt+LGUI}
@@ -51,11 +51,11 @@ layers:
   - $$mdi:apple-keyboard-control$$
   NUMBER:
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '1', h: Gui+1, s: '!'}
-  - {t: '2', h: Gui+2, s: '@'}
-  - {t: '3', h: Gui+3, s: '#'}
-  - {t: '4', h: Gui+4, s: $}
-  - {t: '5', h: Gui+5, s: '%'}
+  - {t: '1', s: '!'}
+  - {t: '2', s: '@'}
+  - {t: '3', s: '#'}
+  - {t: '4', s: $}
+  - {t: '5', s: '%'}
   - {t: '$$mdi:menu-up$$', s: '$$mdi:mouse$$'}
   - {t: '6', s: ^}
   - {t: '7', s: '&'}
