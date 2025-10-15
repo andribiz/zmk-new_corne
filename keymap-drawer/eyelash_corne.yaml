@@ -197,51 +197,51 @@ layers:
   - {type: held}
   - {t: '$$mdi:transfer$$', type: trans}
 combos:
-- p: [15, 16]
+- p: [16, 17]
   k: (
   l: [QWERTY]
-- p: [20, 19]
+- p: [23, 24]
   k: )
   l: [QWERTY]
 - p: [3, 4]
   k: {t: '[', s: '{'}
   l: [QWERTY]
-- p: [7, 8]
+- p: [8, 9]
   k: {t: ']', s: '}'}
   l: [QWERTY]
-- p: [28, 27]
+- p: [31, 32]
   k: '{'
   l: [QWERTY]
-- p: [32, 31]
+- p: [37, 38]
   k: '}'
   l: [QWERTY]
 - p: [2, 3]
   k: <
   l: [QWERTY]
-- p: [8, 9]
+- p: [9, 10]
   k: '>'
   l: [QWERTY]
-- p: [28, 31]
+- p: [32, 37]
   k: {t: '-', s: _}
   l: [QWERTY]
-- p: [4, 7]
+- p: [4, 8]
   k: +
   l: [QWERTY]
-- p: [16, 19]
+- p: [17, 23]
   k: {t: '=', s: +}
   l: [QWERTY]
-- p: [3, 8]
+- p: [3, 9]
   k: '*'
   l: [QWERTY]
-- p: [15, 20]
+- p: [16, 24]
   k: $
   l: [QWERTY]
 - p: [27, 32]
   k: '!'
   l: [QWERTY]
-- p: [18, 17]
+- p: [31, 38]
   k: '&'
   l: [QWERTY]
-- p: [29, 30]
+- p: [33, 36]
   k: _
   l: [QWERTY]
