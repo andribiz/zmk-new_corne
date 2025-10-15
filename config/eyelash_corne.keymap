@@ -154,33 +154,29 @@
             layers = <0>;
         };
 
-        nav01 {
-           bindings = <&kp N1>;
-           key-positions = <1 2>;
-           mods = <MOD_LGUI>;
-           layers = <1>;
-        }
-
-        nav02 {
-           bindings = <&kp N2>;
-           key-positions = <2 3>;
-           mods = <MOD_LGUI>;
-           layers = <1>;
-        }
-
-        nav03 {
-           bindings = <&kp N3>;
-           key-positions = <3 4>;
-           mods = <MOD_LGUI>;
-           layers = <1>;
-        }
-
-        nav04 {
-           bindings = <&kp N4>;
-           key-positions = <4 5>;
-           mods = <MOD_LGUI>;
-           layers = <1>;
-        }
+        /* nav01 { */
+        /*    bindings = <&kp N1>; */
+        /*    key-positions = <1 2>; */
+        /*    layers = <1>; */
+        /* } */
+        /**/
+        /* nav02 { */
+        /*    bindings = <&kp N2>; */
+        /*    key-positions = <2 3>; */
+        /*    layers = <1>; */
+        /* } */
+        /**/
+        /* nav03 { */
+        /*    bindings = <&kp N3>; */
+        /*    key-positions = <3 4>; */
+        /*    layers = <1>; */
+        /* } */
+        /**/
+        /* nav04 { */
+        /*    bindings = <&kp N4>; */
+        /*    key-positions = <4 5>; */
+        /*    layers = <1>; */
+        /* } */
     };
 
     behaviors {
